@@ -1,0 +1,32 @@
+{
+  "name": "2024_fullstack_osa4",
+  "version": "1.0.0",
+  "description": "Blogilista Backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakkamar/2024_FullStack_Osa4.git"
+  },
+  "author": "Marko Hakkarainen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hakkamar/2024_FullStack_Osa4/issues"
+  },
+  "homepage": "https://github.com/hakkamar/2024_FullStack_Osa4#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.6.5",
+    "morgan": "^1.10.0",
+    "punycode": "^2.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
