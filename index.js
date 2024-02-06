@@ -4,8 +4,6 @@ const logger = require("./utils/logger");
 
 //require("dotenv").config();
 
-const PORT = process.env.PORT;
-
 app.listen(config.PORT, () => {
   logger.info(`Server running on port ${config.PORT}`);
 });
