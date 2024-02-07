@@ -23,11 +23,16 @@ const nonExistingId = async () => {
     likes: 100,
   });
   await blog.save();
-  await blog.remove();
+  //await blog.remove();
+  await blog.deleteOne();
 
-  console.log("nonExistingId - blog._id.toString() ", blog._id.toString());
+  //console.log("nonExistingId - blog._id.toString() ", blog._id.toString());
+  //console.log("nonExistingId - blog.id.toString() ", blog.id.toString());
+  //console.log("nonExistingId - blog.id ", blog.id);
+  //console.log("nonExistingId - blog ", blog);
 
   return blog._id.toString();
+  //return blog.id;
 };
 
 const blogsInDb = async () => {
