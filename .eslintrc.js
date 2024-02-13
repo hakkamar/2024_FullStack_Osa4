@@ -11,7 +11,7 @@ module.exports = {
     ecmaVersion: "latest",
   },
   rules: {
-    indent: ["error", 2],
+    indent: ["error", 2, { SwitchCase: 1 }],
     eqeqeq: "error",
     "no-console": 0,
     "react/prop-types": 0,

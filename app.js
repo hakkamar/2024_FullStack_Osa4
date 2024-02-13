@@ -1,19 +1,20 @@
-// ???
 //const http = require("http");
-// ???
 const config = require("./utils/config");
 const express = require("express");
-require("express-async-errors");
 const app = express();
 const cors = require("cors");
+const mongoose = require("mongoose");
+require("express-async-errors");
+
 const blogsRouter = require("./controllers/blogs");
 const usersRouter = require("./controllers/users");
+const loginRouter = require("./controllers/login");
+
 const middleware = require("./utils/middleware");
-//const Blog = require("./models/blog");
-const logger = require("./utils/logger");
-const mongoose = require("mongoose");
 
 mongoose.set("strictQuery", false);
+
+const logger = require("./utils/logger");
 
 logger.info("connecting to", config.MONGODB_URI);
 
@@ -43,33 +44,14 @@ app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
 );
 
+app.use(middleware.tokenExtractor);
+//app.use(middleware.userExtractor);
+
 app.use("/api/blogs", blogsRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/login", loginRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);
-
-/*
-app.get("/api/blogs", (request, response) => {
-  Blog.find({}).then((blogs) => {
-    response.json(blogs);
-  });
-});
-
-app.post("/api/blogs", (request, response) => {
-  const blog = new Blog(request.body);
-
-  blog.save().then((result) => {
-    response.status(201).json(result);
-  });
-});
-*/
-
-/*
-const PORT = process.env.PORT;
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
-});
-*/
 
 module.exports = app;

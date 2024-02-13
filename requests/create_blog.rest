@@ -1,9 +1,10 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pc3RlclgiLCJpZCI6IjY1Y2EyZDA0MTQyZDMzNzRkNTg5OGJkZiIsImlhdCI6MTcwNzgxMTUwMiwiZXhwIjoxNzA3ODE1MTAyfQ.6gGc6lFSbAcFuZS3wtPtUdyqXCkaJTbhauBLekGLJEo
 
 {
-  "title": "Huu Haa Hii",
-  "author": "Hui Lai Lei",
-  "url": "www.huilailee.jp",
-  "likes": 10
+  "title": "Ooi, Oola",
+  "author": "Hurriganes",
+  "url": "www.hurriganes.com",
+  "userId": "65ca2d04142d3374d5898bdf"
 }
